@@ -21,7 +21,7 @@ bot = telebot.TeleBot(token)
 app = Flask(__name__)
 bot.set_webhook(url="https://tralalalalal.herokuapp.com/")
 
-@app.route('/', methods=["POST"])
+@app.route('/')
 def webhook():
     bot.process_new_updates(
         [telebot.types.Update.de_json(request.stream.read().decode("utf-8"))]
